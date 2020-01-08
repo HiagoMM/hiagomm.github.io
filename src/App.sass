@@ -1,9 +1,29 @@
 .main-container
   display: flex
-  width: 80vw
+  width: 85vw
   margin: 0 auto
   flex-direction: row
   justify-content: space-between
+  margin-bottom: 2rem
   .content 
     padding: 1vw
     width: 57vw
+.triangulo
+  position: fixed
+  z-index: -1
+  width: 0
+  height: 0
+  top:0
+  border-left: 96rem solid transparent
+  border-right: 40rem solid transparent
+  border-bottom: 86rem solid #0f86d1
+  
+.traco
+  position: fixed
+  z-index: -2
+  left: -45px
+  top: 49px
+  width: 93rem
+  height: 10rem
+  background: #ebebeb
+  transform: rotate(-12deg)
