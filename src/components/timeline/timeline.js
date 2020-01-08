@@ -8,13 +8,14 @@ import { EXPERIENCES } from "./experience";
 export default function TimeLine() {
   return (
     <VerticalTimeline layout="1-column">
-      {EXPERIENCES.map(exp => {
+      {EXPERIENCES.map((exp, index) => {
         return (
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{ background: exp.color, color: "#fff" }}
             contentArrowStyle={{ borderRight: `7px solid  ${exp.color}` }}
             date={exp.date}
+            key={index}
             iconStyle={{ background: exp.color, color: "#fff" }}
             icon={exp.icon}
           >

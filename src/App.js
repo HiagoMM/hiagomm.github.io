@@ -43,8 +43,7 @@ const App = () => (
         height: "100%"
       }}
     >
-      {" "}
-      working in progress{" "}
+      work in progress
     </div>
   </ThemeProvider>
 );

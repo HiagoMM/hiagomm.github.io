@@ -41,6 +41,13 @@ export const EXPERIENCES = [
     icon: <Computer />
   },
   {
+    title: "Monitoria programação II",
+    subTitle: "Unifacisa",
+    date: "2019.2 - presente",
+    color: "#0f86d1",
+    icon: <Scholl />
+  },
+  {
     title: "Desenvolvedor web",
     subTitle: "LTI / Unifacisa",
     date: "Novembro 2018 - presente",
