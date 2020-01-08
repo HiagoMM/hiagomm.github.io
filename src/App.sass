@@ -6,7 +6,7 @@
   justify-content: space-between
   margin-bottom: 2rem
   .content 
-    padding: 1vw
+    padding: 1rem
     width: 57vw
 .triangulo
   position: fixed
@@ -27,3 +27,14 @@
   height: 10rem
   background: #ebebeb
   transform: rotate(-12deg)
+
+@media only screen and (max-width: 800px) 
+  .main-container
+    flex-direction: column
+    position: inherit
+    align-items: center
+    .content
+      margin-top: 1rem
+      width: 85vw
+
+  

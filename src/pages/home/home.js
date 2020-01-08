@@ -35,18 +35,22 @@ export default () => (
       <h1>Dados pessoais</h1>
       <Container className="dadosPessoais">
         <Divy className="side">
-          <Divx className="element">NOME ENDEREÇO NASCIMENTO EMAIL</Divx>
+          <Divx className="element" id="titles">
+            <p>NOME</p>
+            <p>ENDEREÇO</p>
+            <p>NASCIMENTO</p>
+            EMAIL
+          </Divx>
           <Divx className="element">
-            Hiago Marques De Medeiros
-            <br /> Campina Grande, Paraíba <br />
-            06/11/2000 <br />
+            <p>Hiago Marques De Medeiros</p>
+            <p> Campina Grande, Paraíba</p>
+            <p> 06/11/2000</p>
             <a href="mailto:Hiagomarquesdemedeiros@gmail.com">
               Hiagomarquesdemedeiros@gmail.com
             </a>
           </Divx>
         </Divy>
-        <Divider orientation="vertical" />
-        <Divy className="side">teste</Divy>
+        <Divy className="side"></Divy>
       </Container>
     </Container>
   </div>

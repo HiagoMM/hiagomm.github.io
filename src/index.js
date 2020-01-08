@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.sass";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-console.log(App);
 ReactDOM.render(<App />, document.getElementById("root"));
 
 serviceWorker.unregister();
