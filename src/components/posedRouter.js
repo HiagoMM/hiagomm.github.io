@@ -3,7 +3,7 @@ import { Router, Location } from "@reach/router";
 import posed, { PoseGroup } from "react-pose";
 
 const RouteContainer = posed.div({
-  enter: { opacity: 1, delay: 300, beforeChildren: 300 },
+  enter: { opacity: 1, delay: 400, beforeChildren: 400 },
   exit: { opacity: 0 }
 });
 
