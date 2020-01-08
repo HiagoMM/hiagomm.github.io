@@ -1,16 +1,39 @@
 import React from "react";
 import PosedRouter from "./components/posedRouter";
-import Home from "./pages/home.js";
-import About from "./pages/about";
+import Home from "./pages/home/home.js";
+import Contact from "./pages/contact/contact";
+import Projects from "./pages/projects/projects";
 import "./App.sass";
 import Sidebar from "./components/sidebar/sidebar";
+import { ThemeProvider, createMuiTheme, Paper } from "@material-ui/core";
+import Header from "./components/header/header";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#0f86d1"
+    },
+    secondary: {
+      main: "#000000"
+    }
+  },
+  status: {
+    danger: "orange"
+  }
+});
 const App = () => (
-  <Sidebar>
-    <PosedRouter>
-      <Home path="/" />
-      <About path="/about" />
-    </PosedRouter>
-  </Sidebar>
+  <ThemeProvider theme={theme}>
+    <Header />
+    <div className="main-container">
+      <Sidebar></Sidebar>
+      <Paper elevation={4} className="content">
+        <PosedRouter>
+          <Home path="/" />
+          <Contact path="/contact" />
+          <Projects path="/projects" />
+        </PosedRouter>
+      </Paper>
+    </div>
+  </ThemeProvider>
 );
 export default App;
