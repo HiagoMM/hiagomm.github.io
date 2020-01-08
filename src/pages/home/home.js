@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import posed from "react-pose";
 import Divider from "@material-ui/core/Divider";
 import "./home.sass";
+import "react-circular-progressbar/dist/styles.css";
 import { LinearProgress } from "@material-ui/core";
 import TimeLine from "../../components/timeline/timeline";
-
+import { LANGUAGE_FRAMEWORKS } from "./languageFrameworks";
+import { CircularProgressbar } from "react-circular-progressbar";
 const Container = posed.div({
   enter: { staggerChildren: 50 }
 });
@@ -19,16 +21,20 @@ const H1 = posed.h1({
 });
 
 export default () => {
-  const [progressValues, setProgressValue] = useState({
-    java: 0,
-    javascript: 0
-  });
-  useEffect(() => {
-    setProgressValue({
-      java: 75,
-      javascript: 60
-    });
-  }, []);
+  // const [progressValues, setProgressValue] = useState({
+  //   java: 0,
+  //   javascript: 0,
+  //   python: 0
+  // });
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setProgressValue({
+  //       java: 75,
+  //       javascript: 70,
+  //       python: 60
+  //     });
+  //   }, 1700);
+  // }, []);
   return (
     <div>
       <H1>Sobre</H1>
@@ -64,18 +70,33 @@ export default () => {
               </a>
             </Div>
           </Div>
-          <Div className="side right">
-            <p>Java</p>
-            <LinearProgress
-              variant="determinate"
-              color="primary"
-              value={progressValues.java}
-            />
-            <p>JavaScript</p>
-            <LinearProgress
-              variant="determinate"
-              value={progressValues.javascript}
-            />
+        </Container>
+        <H1>Proficiências</H1>
+        <Container className="language-frameworks">
+          <Div className="language">
+            {LANGUAGE_FRAMEWORKS.language.map((lang, index) => {
+              return (
+                <Div className="element" key={index}>
+                  <p>{lang.name}</p>
+                  <LinearProgress variant="determinate" value={lang.value} />
+                </Div>
+              );
+            })}
+          </Div>
+          <Divider orientation="vertical" className="vertical-divider" />
+          <Div className="frameworks">
+            {LANGUAGE_FRAMEWORKS.frameworks.map((frame, index) => {
+              return (
+                <Div className="element" key={index}>
+                  <p>{frame.name}</p>
+                  <CircularProgressbar
+                    className="progressBar"
+                    value={frame.value}
+                    text={`${frame.value}%`}
+                  />
+                </Div>
+              );
+            })}
           </Div>
         </Container>
         <Div>

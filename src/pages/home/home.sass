@@ -1,11 +1,10 @@
-div
-  font-size: 1.2rem
+
 .divider
   margin: 4rem 0
 .dadosPessoais
   display: flex
-  justify-content: space-evenly
-  height: 13rem
+  justify-content: flex-start
+  height: 10rem
   .side
     width: 23.5rem
     display: flex
@@ -21,7 +20,26 @@ div
     justify-content: flex-start
     LinearProgress
       transition: 3s
-      
+
+.language-frameworks
+  display: flex
+  height: 15rem
+  justify-content: space-between
+  .language  
+    width: 28%
+  .frameworks
+    width: 68%
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: 1fr 1fr 1fr
+    .element
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 90%
+      .progressBar
+        width: 2.9rem
+        height: 2.9rem
 
 @media only screen and ( max-width: 800px )
   .dadosPessoais
@@ -29,4 +47,14 @@ div
     .side
       width: 20.5rem
       
-  
+  .language-frameworks
+    flex-direction: column
+    height: 29rem
+    .vertical-divider
+      display: none
+    .language
+      width: 100%
+    .frameworks
+      width: 100%
+      grid-template-rows: 1fr 1fr 1fr 1fr
+      grid-template-columns: 1fr 1fr

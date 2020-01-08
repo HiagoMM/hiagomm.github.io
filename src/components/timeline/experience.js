@@ -5,6 +5,13 @@ import Computer from "@material-ui/icons/Computer";
 
 export const EXPERIENCES = [
   {
+    title: "Bacharelado em Sistemas de informação ",
+    subTitle: "Unifacisa",
+    date: "2018 - presente",
+    color: "#0f86d1",
+    icon: <Scholl />
+  },
+  {
     title: "Monitoria programação I",
     subTitle: "Unifacisa",
     date: "2018.2 - 2019.1",
