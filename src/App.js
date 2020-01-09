@@ -36,15 +36,6 @@ const App = () => (
     </div>
     <div className="triangulo" />
     <div className="traco" />
-    <div
-      style={{
-        zIndex: 10,
-        width: "100%",
-        height: "100%"
-      }}
-    >
-      work in progress
-    </div>
   </ThemeProvider>
 );
 export default App;
