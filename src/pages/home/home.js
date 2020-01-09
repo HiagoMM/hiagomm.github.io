@@ -41,8 +41,12 @@ export default () => {
   });
   useEffect(() => {
     window.addEventListener("scroll", value => {
-      if (window.scrollY > 300) {
+      if (window.pageYOffset > 300 && window.innerWidth > 800) {
         setProgressValue(LANGUAGE_FRAMEWORKS);
+        window.removeEventListener("scroll", () => {});
+      } else if (window.pageYOffset > 900) {
+        setProgressValue(LANGUAGE_FRAMEWORKS);
+        window.removeEventListener("scroll", () => {});
       }
     });
   }, []);
