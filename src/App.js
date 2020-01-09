@@ -3,11 +3,9 @@ import PosedRouter from "./components/posedRouter";
 import Home from "./pages/home/home.js";
 import Contact from "./pages/contact/contact";
 import Projects from "./pages/projects/projects";
-import posed from "react-pose";
 import "./App.sass";
 import Sidebar from "./components/sidebar/sidebar";
 import { ThemeProvider, createMuiTheme, Paper } from "@material-ui/core";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Header from "./components/header/header";
 
 const theme = createMuiTheme({
@@ -24,15 +22,7 @@ const theme = createMuiTheme({
   }
 });
 
-const Div = posed.div({
-  pressable: true,
-  init: { scale: 1 },
-  press: { scale: 0.8 }
-});
 const App = () => {
-  function goToTop() {
-    window.scrollTo({ top: 0 });
-  }
   return (
     <ThemeProvider theme={theme}>
       <Header />
@@ -44,14 +34,6 @@ const App = () => {
             <Contact path="/contact" />
             <Projects path="/projects" />
           </PosedRouter>
-          <div className="return-top-container">
-            <Div>
-              <KeyboardArrowUpIcon
-                onClick={() => goToTop()}
-                className="return-top"
-              />
-            </Div>
-          </div>
         </Paper>
       </div>
       <div className="triangulo" />

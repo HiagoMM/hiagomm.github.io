@@ -6,6 +6,8 @@ import "react-circular-progressbar/dist/styles.css";
 import { LinearProgress } from "@material-ui/core";
 import TimeLine from "../../components/timeline/timeline";
 import { LANGUAGE_FRAMEWORKS } from "./languageFrameworks";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
 import { CircularProgressbar } from "react-circular-progressbar";
 const Container = posed.div({
   enter: { staggerChildren: 50 }
@@ -14,6 +16,11 @@ const Container = posed.div({
 const Div = posed.div({
   enter: { y: 0, x: 0, opacity: 1 },
   exit: { y: -5, x: -5, opacity: 0 }
+});
+const Divp = posed.div({
+  pressable: true,
+  init: { scale: 1 },
+  press: { scale: 0.8 }
 });
 
 const H1 = posed.h1({
@@ -39,6 +46,7 @@ export default () => {
       { name: "Git", value: 0 }
     ]
   });
+
   useEffect(() => {
     window.addEventListener("scroll", value => {
       if (window.pageYOffset > 300 && window.innerWidth > 800) {
@@ -50,6 +58,9 @@ export default () => {
       }
     });
   }, []);
+  function goToTop() {
+    window.scrollTo({ top: 0 });
+  }
   return (
     <div>
       <H1>Sobre</H1>
@@ -119,6 +130,14 @@ export default () => {
           <TimeLine />
         </Div>
       </Container>
+      <div className="return-top-container">
+        <Divp>
+          <KeyboardArrowUpIcon
+            onClick={() => goToTop()}
+            className="return-top"
+          />
+        </Divp>
+      </div>
     </div>
   );
 };
