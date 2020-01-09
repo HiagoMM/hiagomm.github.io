@@ -21,20 +21,31 @@ const H1 = posed.h1({
 });
 
 export default () => {
-  // const [progressValues, setProgressValue] = useState({
-  //   java: 0,
-  //   javascript: 0,
-  //   python: 0
-  // });
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setProgressValue({
-  //       java: 75,
-  //       javascript: 70,
-  //       python: 60
-  //     });
-  //   }, 1700);
-  // }, []);
+  const [progressValues, setProgressValue] = useState({
+    language: [
+      { name: "Java", value: 0 },
+      { name: "Javascript", value: 0 },
+      { name: "TypeScript", value: 0 },
+      { name: "Python", value: 0 }
+    ],
+    frameworks: [
+      { name: "Sql", value: 0 },
+      { name: "SpringBoot", value: 0 },
+      { name: "Html/Css", value: 0 },
+      { name: "Angular", value: 0 },
+      { name: "React", value: 0 },
+      { name: "ReactNative", value: 0 },
+      { name: "Ionic", value: 0 },
+      { name: "Git", value: 0 }
+    ]
+  });
+  useEffect(() => {
+    window.addEventListener("scroll", value => {
+      if (window.scrollY > 300) {
+        setProgressValue(LANGUAGE_FRAMEWORKS);
+      }
+    });
+  }, []);
   return (
     <div>
       <H1>Sobre</H1>
@@ -74,7 +85,7 @@ export default () => {
         <H1>Proficiências</H1>
         <Container className="language-frameworks">
           <Div className="language">
-            {LANGUAGE_FRAMEWORKS.language.map((lang, index) => {
+            {progressValues.language.map((lang, index) => {
               return (
                 <Div className="element" key={index}>
                   <p>{lang.name}</p>
@@ -85,7 +96,7 @@ export default () => {
           </Div>
           <Divider orientation="vertical" className="vertical-divider" />
           <Div className="frameworks">
-            {LANGUAGE_FRAMEWORKS.frameworks.map((frame, index) => {
+            {progressValues.frameworks.map((frame, index) => {
               return (
                 <Div className="element" key={index}>
                   <p>{frame.name}</p>
