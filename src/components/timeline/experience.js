@@ -57,8 +57,15 @@ export const EXPERIENCES = [
   {
     title: "Desenvolvedor web",
     subTitle: "LTI / Unifacisa",
-    date: "Novembro 2018 - presente",
+    date: "Novembro 2018 - Fevereiro 2020",
     color: "#173373",
+    icon: <Work />
+  },
+  {
+    title: "Desenvolvedor junior",
+    subTitle: "Stefanini",
+    date: "Fevereiro 2020 - presente",
+    color: "#88c13d",
     icon: <Work />
   }
 ];
