@@ -71,7 +71,7 @@ export default () => {
         <Div>
           Atualmente sou graduando em sistemas de informação, apaixonado pelo
           curso e por tecnologia, ex monitor de programação I e atualmente
-          monitor de programação II também sou desenvolvedor junior na stefanini
+          monitor de programação II também sou desenvolvedor junior na Stefanini
         </Div>
 
         <div className="divider">
